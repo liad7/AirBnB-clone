@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core'
-import { Stay, StayFilter } from 'src/app/models/stay-model'
+import { Review, Stay, StayFilter } from 'src/app/models/stay-model'
 import { UtilService } from './util.service'
 import data from '../../data.json'
+import filters from '../../filters.json'
+
 import { BehaviorSubject, Observable, of } from 'rxjs'
 @Injectable({
   providedIn: 'root'
@@ -25,7 +27,7 @@ export class StayService {
       this.utilService.saveToStorage(this.KEY, stays)
     }
     if (filterBy.term) {
-      stays = stays.filter((stay: Stay) => stay.types.includes(filterBy.term))
+      stays = stays.filter((stay: Stay) => stay.labels.includes(filterBy.term))
     }
     this._stays$.next(stays)
   }
@@ -52,6 +54,14 @@ export class StayService {
   public setFilter(stayFilter: StayFilter) {
     this._stayFilter$.next(stayFilter)
     this.query()
+  }
+  public getFilters() {
+    return filters
+
+  }
+  public getStayStatValue(reviews: Review[]) {
+    return
+
   }
 
   private _add(stay: Stay) {

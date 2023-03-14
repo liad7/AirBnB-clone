@@ -10,6 +10,7 @@ import { StayService } from 'src/app/services/stay.service';
 })
 export class ToolBarComponent {
   constructor(private stayService: StayService) { }
+  filters: { filter: string, img: String }[] = this.stayService.getFilters()
   imgs: { title: string, url: string }[] = [
     {
       title: 'Campers',
@@ -57,7 +58,7 @@ export class ToolBarComponent {
     },
   ]
 
-  onSetFilter(stayFilter:StayFilter) {
+  onSetFilter(stayFilter: StayFilter) {
     this.stayService.setFilter(stayFilter)
   }
 }

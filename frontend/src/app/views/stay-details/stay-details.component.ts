@@ -37,10 +37,10 @@ export class StayDetailsComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.subscription = this.route.data.subscribe(data => this.stay = data['stay'])
     if (this.stay) {
-      this.center.lat = this.stay.loc.lan
+      this.center.lat = this.stay.loc.lng
       this.center.lng = this.stay.loc.lat
       this.markerPositions.push({
-        lat:  this.stay.loc.lan,
+        lat: this.stay.loc.lng,
         lng: this.stay.loc.lat
       })
     }

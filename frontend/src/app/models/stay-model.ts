@@ -1,64 +1,65 @@
 export interface Stay {
   _id: string
-  name: string
-  type: string
-  imgUrls: string[]
-  price: number
-  summary: string
-  capacity: number
-  amenities: string[]
-  bathrooms: number
-  bedrooms: number
-  roomType: string
-  host: Host
-  loc: Loc
-  reviews: Review[]
-  likedByUsers: any[]
-  types: string[]
-  statReviews: StatReviews
+  name: string;
+  type: string;
+  imgUrls: string[];
+  price: number;
+  summary: string;
+  amenities: string[];
+  roomType: string;
+  host: Host;
+  loc: Loc;
+  reviews: Review[];
+  likedByUsers: any[];
+  labels: string[];
+  stayDetails: StayDetails;
 }
 
-export interface StatReviews {
-  Cleanliness: number
-  Communication: number
-  CheckIn: number
-  Accuracy: number
-  Location: number
-  Value: number
+export interface StayDetails {
+  guests: number;
+  bedrooms: number;
+  beds: number;
+  bathrooms: number;
 }
 
 export interface Review {
-  at: string
-  by: By
-  txt: string
+  createdAt: string;
+  by: By;
+  txt: string;
+  id: string;
+  moreRate: MoreRate;
+}
+
+export interface MoreRate {
+  cleanliness: number;
+  accuracy: number;
+  communication: number;
+  location: number;
+  checkIn: number;
+  value: number;
 }
 
 export interface By {
-  _id: string
-  fullname: string
-  imgUrl: string
-  id: string
+  _id: string;
+  fullname: string;
+  imgUrl: string;
+  id: string;
 }
 
 export interface Loc {
-  country: string
-  countryCode: string
-  city: string
-  address: string
-  lat: number
-  lan: number
+  country: string;
+  countryCode: string;
+  city: string;
+  address: string;
+  lat: number;
+  lng: number;
 }
 
 export interface Host {
-  _id: string
-  fullname: string
-  location: string
-  about: string
-  responseTime: string
-  thumbnailUrl: string
-  pictureUrl: string
-  isSuperhost: boolean
-  id: string
+  _id: string;
+  fullname: string;
+  imgUrl: string;
+  isSuperHost: boolean;
 }
 
 export interface StayFilter {
