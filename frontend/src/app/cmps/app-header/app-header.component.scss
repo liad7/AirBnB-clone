@@ -1,0 +1,105 @@
+@import "../../../assets/styles/setup/variables";
+
+header {
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+    margin-bottom: 20px;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
+
+    .main-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            width: 120px;
+            height: 64px;
+            cursor: pointer;
+        }
+
+        .main-container {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #DDDDDD;
+            border-radius: 40px;
+            gap: 10px;
+            box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+            transition: box-shadow 0.2s ease;
+            cursor: pointer;
+            padding: 8px 16px;
+
+            &:hover {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+            }
+
+            .search-icon {
+                width: 32px;
+                height: 32px;
+                background-color: $clr3;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    color: #fff;
+                    width: 12px;
+                    height: 12px;
+                }
+
+            }
+
+            .item {
+                color: $clr1;
+                font-weight: 600;
+            }
+
+            .item-add {
+                color: $clr2;
+            }
+
+        }
+
+        .sub-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+
+
+            .item {
+                padding: 1em;
+                border-radius: 2em;
+                
+
+                &:hover {
+                    background-color: #f7f7f7;
+                }
+            }
+        }
+
+        .contact-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-radius: 40px;
+            box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+            gap: 10px;
+            padding: 5px 5px 5px 12px;
+
+            &:hover {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+            }
+
+        }
+    }
+}
+

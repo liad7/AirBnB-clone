@@ -1,0 +1,33 @@
+<header class="full main-layout">
+    <div class="main-header ">
+        <div routerLink="/" class="logo ">
+            <img src="https://res.cloudinary.com/dsvs2bgn4/image/upload/v1677080568/airbnb-logo_iczxfh.png" alt="logo">
+        </div>
+
+
+        <div class="main-container">
+            <p class="item">AnyWhere</p>|
+            <p class="item">Any Week</p>|
+            <div class="flex gap-10 align-center">
+                <p class="item-add">Add guests</p>
+                <div class="search-icon">
+                    <i class="fa-solid  fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sub-container  ">
+            <p routerLink="/stay/edit" class="item">Airbnb your home</p>
+            <div (click)="toggleIsProfile()" class="contact-container">
+                <i class="fa-solid fa-bars"></i>
+                <img width="30px" height="30px
+                " src="https://res.cloudinary.com/dsvs2bgn4/image/upload/v1677080627/contact_aive51.svg" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+
+<profile-modal (toggle)="toggleIsLogin()" *ngIf="isExpandProfile"></profile-modal>
+
+<login-signup (close)="toggleIsLogin()" *ngIf="isExpandLogin"></login-signup>

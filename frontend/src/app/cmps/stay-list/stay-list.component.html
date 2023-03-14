@@ -1,0 +1,2 @@
+<stay-preview *ngFor="let stay of stays; trackBy: trackByFn; index as idx" [stay]="stay"
+ (remove)="remove.emit($event)" ></stay-preview>

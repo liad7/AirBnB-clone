@@ -1,0 +1,64 @@
+@import '../../../assets/styles/setup/variables';
+
+.stay-preview {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+
+    .like {
+        z-index: 2;
+        position: absolute;
+        top: 4%;
+        right: 4%;
+
+        i {
+            font-size: 1.25em;
+        }
+
+
+        &.is-like {
+            path {
+                fill: red;
+            }
+        }
+
+        &:hover {
+            svg {
+                scale: 1.1;
+            }
+        }
+    }
+
+    .stay-contant {
+        flex-basis: 30%;
+        height: 200px;
+        display: grid;
+        gap: 2px;
+
+        .location {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 900;
+
+            .rate {
+                font-weight: normal;
+            }
+        }
+
+        main {
+            padding-top: 3px;
+            padding-bottom: 10px;
+            overflow: hidden;
+            width: 200px;
+            color: $clr2;
+
+            .stay-name {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                width: fit-content;
+            }
+        }
+    }
+}
