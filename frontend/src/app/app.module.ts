@@ -17,9 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component'
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component'
-import { LoginSignupComponent } from './cmps/login-signup/login-signup.component'
 import { StayEditComponent } from './views/stay-edit/stay-edit.component'
-import { ProfileModalComponent } from './cmps/profile-modal/profile-modal.component'
 import { ToastrModule } from 'ngx-toastr'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DetailsReserveComponent } from './cmps/details-reserve/details-reserve.component'
@@ -44,9 +42,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
     DetailsReviewStatComponent,
     DetailsReviewsComponent,
     DetailsReviewPreviewComponent,
-    LoginSignupComponent,
     StayEditComponent,
-    ProfileModalComponent,
     DetailsReserveComponent,
     GuestModalComponent
   ],
