@@ -14,6 +14,7 @@ export class SearchStayComponent {
   isRegionShown: boolean = true
   regions: { title: string, url: string }[] = this.stayService.getRegions()
   selectedRegion: string = 'Search destinations'
+  clickedRegion: string = ''
 
   toggleRegion(): void {
     this.isRegionShown = !this.isRegionShown
@@ -21,6 +22,11 @@ export class SearchStayComponent {
 
   setSelectedRegion(region: string): void {
     this.selectedRegion = region
+    this.toggleRegion()
+  }
+
+  clickLabel(label: string): void {
+    this.clickedRegion = label
     this.toggleRegion()
   }
 }

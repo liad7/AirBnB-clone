@@ -1,5 +1,5 @@
 <section [ngClass]="{'search-stay':true, 'show':isOpen}">
-    <label class="search-where" (click)="toggleRegion()">
+    <label [ngClass]="{'search-where':true, 'selected':clickedRegion === 'where'}" (click)="clickLabel('where')">
         <p class="header">Where</p>
         <input [placeholder]="selectedRegion" />
     </label>
@@ -14,15 +14,15 @@
             </div>
         </div>
     </div>
-    <label>
+    <label [ngClass]="{'selected':clickedRegion === 'in'}" (click)="clickLabel('in')">
         <p class="header">Check in</p>
         <input placeholder="date" />
     </label>
-    <label>
+    <label [ngClass]="{'selected':clickedRegion === 'out'}" (click)="clickLabel('out')">
         <p class="header">Check out</p>
         <input placeholder="date" />
     </label>
-    <label class="search-who">
+    <label class="search-who" [ngClass]="{'search-who': true,'selected':clickedRegion === 'who'}" (click)="clickLabel('who')">
         <div>
             <p class="header">Who</p>
             <input placeholder="Add guests">
