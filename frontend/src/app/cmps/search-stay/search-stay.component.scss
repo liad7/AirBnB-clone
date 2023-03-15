@@ -1,0 +1,71 @@
+.search-stay {
+    border-radius: 40px;
+    box-shadow: inset 0 0 0 1px #d0d0d0, 0 1px 2px rgba(0, 0, 0, .03), 0 2px 4px rgba(0, 0, 0, .03), 0 4px 8px rgba(0, 0, 0, .03), 0 8px 16px rgba(0, 0, 0, .03), 0 16px 32px rgba(0, 0, 0, .03), 0 32px 64px rgba(0, 0, 0, .03);
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 2fr;
+    height: 66px;
+    left: 50%;
+    min-width: 348px;
+    pointer-events: auto;
+    position: absolute;
+    top: 80px;
+    transform: translateY(-66px) translateX(-50%) translateZ(66px);
+    transform-origin: 0 50%;
+    transition: all .5s cubic-bezier(.075, .82, .165, 1), opacity .5s cubic-bezier(.075, .82, .165, 1);
+    width: 100%;
+    z-index: 15;
+    max-width: 850px;
+
+    &.show {
+        background-color: #ebebeb;
+        opacity: 1;
+        overflow: visible;
+        pointer-events: all;
+        transform: translateY(0) translateX(-50%) translateZ(0);
+        transition: all .5s cubic-bezier(.075, .82, .165, 1);
+    }
+
+    label {
+        cursor: pointer;
+        padding-inline-start: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .header {
+            font-size: 12px;
+        }
+    }
+
+    input {
+        background: transparent;
+        border: none;
+        color: #717171;
+        font-size: 14px;
+        margin-left: -2px;
+        outline: none;
+        width: 100%;
+    }
+
+    .search-who {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+
+        .search-btn {
+            align-items: center;
+            background: radial-gradient(circle at center, #ff385c 0, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%);
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 24px;
+            color: #fff;
+            display: flex;
+            font-family: Cereal-Medium, sans-serif;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-right: 0.55rem;
+            padding: 1rem 0;
+            width: 111px;
+        }
+    }
+}

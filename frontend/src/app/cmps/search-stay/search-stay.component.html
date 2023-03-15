@@ -1,0 +1,24 @@
+<section [ngClass]="{'search-stay':true, 'show':isOpen}">
+    <label class="search-where">
+        <p class="header">Where</p>
+        <input placeholder="Search destinations" />
+    </label>
+    <label>
+        <p class="header">Check in</p>
+        <input placeholder="date" />
+    </label>
+    <label>
+        <p class="header">Check out</p>
+        <input placeholder="date" />
+    </label>
+    <label class="search-who">
+        <div>
+            <p class="header">Who</p>
+            <input placeholder="Add guests">
+        </div>
+        <button class="search-btn">
+            <i class="fa-solid  fa-magnifying-glass"></i>
+            Search
+        </button>
+    </label>
+</section>

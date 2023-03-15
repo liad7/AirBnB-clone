@@ -1,9 +1,8 @@
 <header class="full main-layout">
-    <div class="main-header ">
+    <div class="main-header" (click)="toggleIsSearch()">
         <div routerLink="/" class="logo ">
             <img src="https://res.cloudinary.com/dsvs2bgn4/image/upload/v1677080568/airbnb-logo_iczxfh.png" alt="logo">
         </div>
-
 
         <div class="main-container">
             <p class="item">AnyWhere</p>|
@@ -14,7 +13,6 @@
                     <i class="fa-solid  fa-magnifying-glass"></i>
                 </div>
             </div>
-
         </div>
 
         <div class="sub-container  ">
@@ -25,6 +23,12 @@
                 " src="https://res.cloudinary.com/dsvs2bgn4/image/upload/v1677080627/contact_aive51.svg" alt="">
             </div>
         </div>
+    </div>
+
+    <div [ngClass]="{ 'search-wrapper full':true, 'show':isSearchOpen }">
+        <!-- <div class="search-wrapper"> -->
+        <search-stay [isOpen]="isSearchOpen"></search-stay>
+        <!-- <search-stay *ngIf="isSearchOpen"></search-stay> -->
     </div>
 </header>
 
