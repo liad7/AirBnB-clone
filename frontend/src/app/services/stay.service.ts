@@ -129,5 +129,33 @@ export class StayService {
     }
   }
 
+  public getLocations() {
+    return [
+      {
+        title: "I'm Flexible",
+        url: 'https://airbnb-in-react.netlify.app/static/media/all.2a49ce1de0a165eaff60.webp'
+      },
+      {
+        title: 'Middle East',
+        url: 'https://airbnb-in-react.netlify.app/static/media/all.2a49ce1de0a165eaff60.webp'
+      },
+      {
+        title: 'Italy',
+        url: 'https://airbnb-in-react.netlify.app/static/media/italy.b00d91b4b8afceaa4985.webp'
+      },
+      {
+        title: 'South America',
+        url: 'https://airbnb-in-react.netlify.app/static/media/south-america.3f32b3945318eb0dbede.webp'
+      },
+      {
+        title: 'France',
+        url: 'https://airbnb-in-react.netlify.app/static/media/france.b75cf05b38e6bae34c31.webp'
+      },
+      {
+        title: 'United States',
+        url: 'https://airbnb-in-react.netlify.app/static/media/usa.bf6a17c846334e3873a4.webp'
+      },
+    ]
+  }
 
 }
