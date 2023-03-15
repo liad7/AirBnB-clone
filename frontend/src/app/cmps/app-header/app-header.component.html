@@ -1,10 +1,10 @@
 <header class="full main-layout">
-    <div class="main-header" (click)="toggleIsSearch()">
+    <div class="main-header">
         <div routerLink="/" class="logo ">
             <img src="https://res.cloudinary.com/dsvs2bgn4/image/upload/v1677080568/airbnb-logo_iczxfh.png" alt="logo">
         </div>
 
-        <div class="main-container">
+        <div [ngClass]="{'main-container':true,'hide':isSearchOpen}" (click)="toggleIsSearch()">
             <p class="item">AnyWhere</p>|
             <p class="item">Any Week</p>|
             <div class="flex gap-10 align-center">
@@ -13,6 +13,12 @@
                     <i class="fa-solid  fa-magnifying-glass"></i>
                 </div>
             </div>
+        </div>
+
+        <div [ngClass]="{'experience-type':true,'show':isSearchOpen}">
+            <button class="">Stays</button>
+            <button class="">Experiences</button>
+            <button class="">Online Experiences</button>
         </div>
 
         <div class="sub-container  ">
@@ -26,10 +32,9 @@
     </div>
 
     <div [ngClass]="{ 'search-wrapper full':true, 'show':isSearchOpen }">
-        <!-- <div class="search-wrapper"> -->
         <search-stay [isOpen]="isSearchOpen"></search-stay>
-        <!-- <search-stay *ngIf="isSearchOpen"></search-stay> -->
     </div>
 </header>
+<div class="screen" *ngIf="isSearchOpen" (click)="toggleIsSearch()"></div>
 
 <!-- <profile-modal (toggle)="toggleIsLogin()" *ngIf="isExpandProfile"></profile-modal> -->
