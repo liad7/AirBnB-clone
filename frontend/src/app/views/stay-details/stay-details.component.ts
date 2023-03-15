@@ -4,8 +4,6 @@ import { lastValueFrom, Subscription } from 'rxjs';
 import { Stay } from 'src/app/models/stay-model';
 import { StayService } from 'src/app/services/stay.service';
 
-
-
 @Component({
   selector: 'stay-details',
   templateUrl: './stay-details.component.html',
@@ -20,7 +18,6 @@ export class StayDetailsComponent implements OnInit, OnDestroy {
   stay: Stay | undefined
   subscription!: Subscription
   isShown: boolean = false
-
 
   display: any;
 
@@ -46,7 +43,6 @@ export class StayDetailsComponent implements OnInit, OnDestroy {
         lng: this.stay.loc.lat
       })
     }
-
   }
 
 

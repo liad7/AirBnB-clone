@@ -24,11 +24,6 @@ import { DetailsReserveComponent } from './cmps/details-reserve/details-reserve.
 import { GuestModalComponent } from './cmps/guest-modal/guest-modal.component'
 import { AirbnbCalendarModule } from 'ngx-airbnb-calendar';
 import { GoogleMapsModule } from '@angular/google-maps'
-import { SearchStayComponent } from './cmps/search-stay/search-stay.component'
-import { FilterModalComponent } from './cmps/filter-modal/filter-modal.component'
-import { ReservationModalComponent } from './cmps/reservation-modal/reservation-modal.component'
-import { FilterPriceComponent } from './cmps/filter-price/filter-price.component'
-import { FilterTypeComponent } from './cmps/filter-type/filter-type.component'
 
 
 
@@ -49,12 +44,7 @@ import { FilterTypeComponent } from './cmps/filter-type/filter-type.component'
     DetailsReviewPreviewComponent,
     StayEditComponent,
     DetailsReserveComponent,
-    GuestModalComponent,
-    SearchStayComponent,
-    FilterModalComponent,
-    FilterPriceComponent,
-    FilterTypeComponent,
-    ReservationModalComponent,
+    GuestModalComponent
   ],
   imports: [
     BrowserModule,
