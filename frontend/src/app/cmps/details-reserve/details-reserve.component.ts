@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CalendarOptions } from 'ngx-airbnb-calendar';
 import { Stay } from 'src/app/models/stay-model';
 import { StayService } from 'src/app/services/stay.service';
@@ -15,6 +15,9 @@ export class DetailsReserveComponent implements OnInit {
   constructor(private stayService: StayService) { }
 
   @Input() stay!: Stay
+  @Output() show = new EventEmitter<boolean>()
+
+
 
   date: string | null = null;
   checkIn: Date = new Date()
@@ -76,8 +79,13 @@ export class DetailsReserveComponent implements OnInit {
       this.checkOut = new Date(dates[1])
     }
 
-
   }
+
+  toggleIsShown() {
+    this.show.emit()
+  }
+
+
 
 
 

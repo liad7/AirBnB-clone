@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Review, Stay, StayFilter } from 'src/app/models/stay-model'
+import { FilterBy, Review, Stay, StayFilter } from 'src/app/models/stay-model'
 import { UtilService } from './util.service'
 import data from '../../data/minified-stays.json'
 import filters from '../../data/filters.json'
@@ -16,7 +16,7 @@ export class StayService {
   private _stays$ = new BehaviorSubject<Stay[]>([]);
   public stays$ = this._stays$.asObservable()
 
-  private _stayFilter$ = new BehaviorSubject<StayFilter>({ term: '' })
+  private _stayFilter$ = new BehaviorSubject<FilterBy>(this.getEmptyFilterBy())
   public stayFilter$ = this._stayFilter$.asObservable()
 
   public query() {
@@ -26,8 +26,19 @@ export class StayService {
       stays = data.map(stay => ({ ...stay, _id: this.utilService.makeId() }))
       this.utilService.saveToStorage(this.KEY, stays)
     }
-    if (filterBy.term) {
-      stays = stays.filter((stay: Stay) => stay.labels.includes(filterBy.term))
+    if (filterBy.selectedFilter) {
+      stays = stays.filter((stay: Stay) => stay.labels.includes(filterBy.selectedFilter))
+    }
+    if (filterBy.minPrice > 0) {
+      stays = stays.filter((stay: Stay) => stay.price > filterBy.minPrice)
+    }
+    if (filterBy.maxPrice) {
+      stays = stays.filter((stay: Stay) => stay.price < filterBy.maxPrice)
+    }
+    if (filterBy.types.length) {
+      stays = stays.filter((stay: Stay) => {
+        return filterBy.types.includes(stay.type)
+      })
     }
     this._stays$.next(stays)
   }
@@ -51,8 +62,8 @@ export class StayService {
     return stay._id ? this._edit(stay) : this._add(stay)
   }
 
-  public setFilter(stayFilter: StayFilter) {
-    this._stayFilter$.next(stayFilter)
+  public setFilter(filterBy: FilterBy) {
+    this._stayFilter$.next(filterBy)
     this.query()
   }
   public getFilters() {
@@ -107,6 +118,15 @@ export class StayService {
     console.log(new Date(2023, month, startDay))
 
 
+  }
+
+  public getEmptyFilterBy(): FilterBy {
+    return {
+      selectedFilter: '',
+      minPrice: 20,
+      maxPrice: 1000,
+      types: [],
+    }
   }
 
 

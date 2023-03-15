@@ -1,0 +1,70 @@
+.filter-modal {
+    width: 100%;
+    max-width: 780px;
+    border-radius: 12px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background: white;
+
+    .modal-header {
+
+        min-height: 64px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgb(235, 235, 235);
+
+        button {
+            position: absolute;
+            left: 2%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .footer {
+        padding: 20px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        min-height: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .clear {
+            border-radius: 8px;
+            border-width: 1px;
+            border-style: solid;
+            transition: box-shadow 0.2s ease, transform 0.1s ease;
+            border: none;
+            background: transparent;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            text-decoration: underline;
+        }
+
+        .show-homes {
+            border-radius: 8px;
+            border-width: 1px;
+            border-style: solid;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            padding-left: 24px;
+            padding-right: 24px;
+            transition: box-shadow 0.2s ease, transform 0.1s ease;
+            border: none;
+            background: #222;
+            color: white;
+        }
+    }
+
+}

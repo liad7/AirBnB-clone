@@ -27,7 +27,7 @@
             <details-amenities [stay]="stay"></details-amenities>
         </div>
         <div class="sub-content">
-            <details-reserve [stay]="stay"></details-reserve>
+            <details-reserve (show)="toggleIsShown()" [stay]="stay"></details-reserve>
         </div>
     </section>
     <section class="reviews">
@@ -43,5 +43,6 @@
                 [options]="markerOptions"></map-marker>
         </google-map>
     </section>
+    <reservation-modal (show)="toggleIsShown()" [stay]="stay" [isShown]="isShown"></reservation-modal>
 
 </section>

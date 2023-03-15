@@ -23,7 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DetailsReserveComponent } from './cmps/details-reserve/details-reserve.component'
 import { GuestModalComponent } from './cmps/guest-modal/guest-modal.component'
 import { AirbnbCalendarModule } from 'ngx-airbnb-calendar';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { FilterModalComponent } from './cmps/filter-modal/filter-modal.component';
+import { FilterPriceComponent } from './cmps/filter-price/filter-price.component';
+import { FilterTypeComponent } from './cmps/filter-type/filter-type.component';
+import { ReservationModalComponent } from './cmps/reservation-modal/reservation-modal.component'
 
 
 
@@ -44,7 +48,11 @@ import { GoogleMapsModule } from '@angular/google-maps'
     DetailsReviewPreviewComponent,
     StayEditComponent,
     DetailsReserveComponent,
-    GuestModalComponent
+    GuestModalComponent,
+    FilterModalComponent,
+    FilterPriceComponent,
+    FilterTypeComponent,
+    ReservationModalComponent
   ],
   imports: [
     BrowserModule,

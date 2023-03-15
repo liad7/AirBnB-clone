@@ -1,0 +1,22 @@
+<div (click)="onCloseModal()" class="black-screen"></div>
+
+<section class="filter-modal">
+
+    <div class="modal-header">
+        <h3>Filters</h3>
+        <button (click)="onCloseModal()" class="btn-close">X</button>
+    </div>
+    <div class="modal-content">
+        <filter-price [filterBy]="filterBy"></filter-price>
+        <filter-type [filterBy]="filterBy"></filter-type>
+    </div>
+    <div class='footer'>
+        <button class='clear'>Clear all</button>
+        <button (click)="onSetFilterBy()" class='show-homes'>
+            Show homes
+        </button>
+    </div>
+
+
+
+</section>

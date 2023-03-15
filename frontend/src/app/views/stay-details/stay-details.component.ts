@@ -19,6 +19,8 @@ export class StayDetailsComponent implements OnInit, OnDestroy {
   @Input() stayId!: string
   stay: Stay | undefined
   subscription!: Subscription
+  isShown: boolean = false
+
 
   display: any;
 
@@ -55,6 +57,9 @@ export class StayDetailsComponent implements OnInit, OnDestroy {
     if (event.latLng != null) this.display = event.latLng.toJSON();
   }
 
+  toggleIsShown() {
+    this.isShown = !this.isShown
+  }
 
 
   ngOnDestroy(): void {

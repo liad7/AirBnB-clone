@@ -1,15 +1,18 @@
 <section class="tool-bar   ">
-    <button class="arrow-btn">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <div class="tool-bar-list ">
-        <div class="tool-bar-preview" *ngFor="let filter of filters " (click)="onSetFilter({term:filter.filter})">
-            <img src="{{filter.img}}" alt="">
-            {{filter.filter}}
 
+    <div class="tool-bar-list" #scroll>
+        <div class="tool-bar-preview" *ngFor="let item of filters " (click)="onSetFilter(item.title)">
+            <img src="{{item.url}}" alt="">
+            {{item.title}}
         </div>
     </div>
-    <button class="arrow-btn">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
+    <div (click)="toggleIsShowFilter()" class="more-filters">
+        <img src="https://res.cloudinary.com/yaronshapira-com/image/upload/v1676833536/Airbnb/temp_dc7cvq.svg" alt="">
+        <p>filters </p>
+    </div>
+
+    <filter-modal (close)="toggleIsShowFilter()" *ngIf="isShowFilter"></filter-modal>
+
+
+
 </section>

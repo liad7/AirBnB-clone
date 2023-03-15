@@ -1,0 +1,24 @@
+<div (click)="onCloseModal()" *ngIf=" isShown" class="black-screen "></div>
+<div [ngClass]="{'reservation-modal':true,'shown':isShown}">
+    <div class="flex align-center gap-5 ">
+        <img src="https://airbnb-in-react.netlify.app/static/media/mini-logo.1b5ae477397a3f99ffec204d164afd75.svg"
+            alt='' class='logo' />
+        <div class="vecation-container ">
+            <h1>It's vacation time!</h1>
+            <p class='sub-heading'>You're going to {{stay.loc.city}}!</p>
+        </div>
+    </div>
+    <img [src]="stay.imgUrls[0]" alt='' class='stay-image' />
+    <div class="host-details">
+        <div class="host-info">
+            <h3 class="host-name">{{stay.roomType}} by {{stay.host.fullname}}</h3>
+            <p>bathrooms:{{stay.stayDetails.bathrooms}}•bedrooms:{{stay.stayDetails.bedrooms}}</p>
+        </div>
+        <img class="host-img" [src]="stay.host.imgUrl" alt="">
+    </div>
+    <p class='thank-you-paragraph'>
+        Thank you for choosing to stay with us! We hope you have a wonderful time in our Airbnb clone. Your
+        purchase has been confirmed and we look forward to hosting you soon.
+    </p>
+    <button (click)="onCloseModal()">Close</button>
+</div>

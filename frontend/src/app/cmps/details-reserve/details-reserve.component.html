@@ -28,7 +28,7 @@
         </div>
     </form>
 
-    <button class="btn-reserve">Reserve</button>
+    <button (click)="toggleIsShown()" class="btn-reserve">Reserve</button>
     <p class="reserve-txt">You won't be charged yet</p>
     <div class="price-container">
         <div class="price-line">
@@ -51,29 +51,8 @@
 
     </div>
 
+    <!-- <reservation-modal (close)="toggleIsShown()" [stay]="stay" [isShown]="isShown"></reservation-modal> -->
 
-    <!-- <div class="guest-modal"> -->
-    <!-- <div *ngFor="let guest of guests" class="flex align-center space"> -->
-    <!-- <div class="title"> -->
-    <!-- <h3>{{guest.type}}</h3> -->
-    <!-- <span>{{guest.desc}}</span> -->
-    <!-- </div> -->
-    <!-- <div class="btns-contianer flex gap-5 align-center"> -->
-    <!-- <button ><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" -->
-    <!-- aria-hidden="true" role="presentation" focusable="false" -->
-    <!-- style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"> -->
-    <!-- <path d="m2 16h28"></path> -->
-    <!-- </svg></button> -->
-    <!-- <span>{{guest.count}}</span> -->
-    <!-- <button ><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" -->
-    <!-- aria-hidden="true" role="presentation" focusable="false" -->
-    <!-- style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"> -->
-    <!-- <path d="m2 16h28m-14-14v28"></path> -->
-    <!-- </svg> -->
-    <!-- </button> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
 
 
 </div>

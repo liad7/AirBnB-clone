@@ -1,0 +1,19 @@
+<div class='price-filter'>
+    <h5>Price range</h5>
+    <p>The average nightly price is $75</p>
+    <form class='inputs'>
+        <label>
+            <p>min price</p>
+            <p class='currency'>$</p>
+            <input type='text' name='minPrice' [(ngModel)]=filterBy.minPrice />
+        </label>
+        <p class='dash'>
+            -
+        </p>
+        <label>
+            <p>max price</p>
+            <p class='currency'>$</p>
+            <input type='text' name='maxPrice' [(ngModel)]=filterBy.maxPrice />
+        </label>
+    </form>
+</div>

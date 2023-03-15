@@ -66,3 +66,9 @@ export interface Host {
 export interface StayFilter {
   term: string
 }
+export interface FilterBy {
+  selectedFilter: string
+  minPrice: number
+  maxPrice: number
+  types: string[]
+}
