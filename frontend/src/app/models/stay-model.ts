@@ -31,6 +31,7 @@ export interface Review {
 }
 
 export interface MoreRate {
+  [key: string]: number
   cleanliness: number;
   accuracy: number;
   communication: number;

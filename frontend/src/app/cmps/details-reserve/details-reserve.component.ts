@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CalendarOptions } from 'ngx-airbnb-calendar';
 import { Stay } from 'src/app/models/stay-model';
-import fr from "date-fns/locale/fr";
+import { StayService } from 'src/app/services/stay.service';
 
 
 
@@ -11,7 +11,8 @@ import fr from "date-fns/locale/fr";
   styleUrls: ['./details-reserve.component.scss']
 })
 
-export class DetailsReserveComponent {
+export class DetailsReserveComponent implements OnInit {
+  constructor(private stayService: StayService) { }
 
   @Input() stay!: Stay
 
@@ -20,6 +21,9 @@ export class DetailsReserveComponent {
   checkOut: Date = new Date(Date.now() + (3600 * 1000 * 72))
   totaelDays!: any
   children: number = 0
+  reviewAvg!: number
+
+
 
   isShowGuestModal: boolean = false
 
@@ -32,6 +36,9 @@ export class DetailsReserveComponent {
   };
 
 
+  ngOnInit() {
+    this.reviewAvg = +this.stayService.getStayRating(this.stay).toFixed(1)
+  }
 
 
   get GetTotalDays() {

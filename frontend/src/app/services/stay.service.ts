@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
 import { Review, Stay, StayFilter } from 'src/app/models/stay-model'
 import { UtilService } from './util.service'
-import data from '../../data.json'
-import filters from '../../filters.json'
+import data from '../../data/minified-stays.json'
+import filters from '../../data/filters.json'
 
 import { BehaviorSubject, Observable, of } from 'rxjs'
 @Injectable({
@@ -62,6 +62,24 @@ export class StayService {
   public getStayStatValue(reviews: Review[]) {
     return
 
+  }
+
+  getStayRating(stay: Stay) {
+    return (
+      stay.reviews.reduce((acc: number, review: Review) => {
+        const values: number[] = Object.values(review.moreRate)
+        const average = values.reduce((sum, value) => sum + value, 0) / values.length
+
+        return acc + average
+      }, 0) / stay.reviews.length
+    )
+  }
+  getStayNicheRating(stay: Stay, nicheRating: string) {
+    return (
+      stay.reviews.reduce((acc: number, review: Review) => {
+        return acc + review.moreRate[nicheRating]
+      }, 0) / stay.reviews.length
+    )
   }
 
   private _add(stay: Stay) {

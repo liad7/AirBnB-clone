@@ -1,4 +1,7 @@
 <section class="tool-bar   ">
+    <button class="arrow-btn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
     <div class="tool-bar-list ">
         <div class="tool-bar-preview" *ngFor="let filter of filters " (click)="onSetFilter({term:filter.filter})">
             <img src="{{filter.img}}" alt="">
@@ -6,4 +9,7 @@
 
         </div>
     </div>
+    <button class="arrow-btn">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
 </section>

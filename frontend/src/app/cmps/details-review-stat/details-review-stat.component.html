@@ -1,9 +1,9 @@
 <section class="details-review-stat">
-    <div class="stat-item" *ngFor="let item of stay.statReviews | keyvalue">
-        <div class="title">{{item.key}}</div>
+    <div class="stat-item" *ngFor="let niche of niches ">
+        <div class="title">{{niche}}</div>
         <div class="flex align-center gap-5">
-            <progress max="5" value="{{item.value}}"></progress>
-            <p>{{item.value}}</p>
+            <progress max="5" value="{{getRate(niche)}}"></progress>
+            <p>{{getRate(niche)}}</p>
 
         </div>
     </div>

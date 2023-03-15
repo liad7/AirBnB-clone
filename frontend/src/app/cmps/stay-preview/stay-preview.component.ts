@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Stay } from 'src/app/models/stay-model'
 import { Router } from '@angular/router';
+import { StayService } from 'src/app/services/stay.service';
 
 
 @Component({
@@ -11,15 +12,20 @@ import { Router } from '@angular/router';
 })
 
 export class StayPreviewComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private stayService: StayService
+  ) { }
 
   @Input() stay!: Stay
   @Output() remove = new EventEmitter<string>()
 
   isLike: boolean = false
+  reviewAvg!: number
 
   ngOnInit(): void {
-    // console.log('stay:', this.stay)
+    this.reviewAvg = +this.stayService.getStayRating(this.stay).toFixed(1)
+
   }
 
   toggleIsLike(ev: MouseEvent) {
