@@ -1,13 +1,16 @@
 <section [ngClass]="{'search-stay':true, 'show':isOpen}">
     <label class="search-where" (click)="toggleRegion()">
         <p class="header">Where</p>
-        <input placeholder="Search destinations" />
+        <input [placeholder]="selectedRegion" />
     </label>
     <div *ngIf="isRegionShown" class="region-modal">
         <h4>Search by region</h4>
         <div class="wrapper">
-            <div>
-
+            <div class="regions">
+                <div *ngFor="let region of regions; index as idx">
+                    <img [src]="region.url" alt="" (click)="setSelectedRegion(region.title)">
+                    <p>{{region.title}}</p>
+                </div>
             </div>
         </div>
     </div>

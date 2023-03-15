@@ -129,7 +129,7 @@ export class StayService {
     }
   }
 
-  public getLocations() {
+  public getRegions() {
     return [
       {
         title: "I'm Flexible",

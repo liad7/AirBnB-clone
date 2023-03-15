@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core'
+import { StayService } from 'src/app/services/stay.service'
 
 @Component({
   selector: 'search-stay',
@@ -6,12 +7,20 @@ import { Component, Input } from '@angular/core'
   styleUrls: ['./search-stay.component.scss']
 })
 export class SearchStayComponent {
+  constructor(private stayService: StayService) { }
+
   @Input() isOpen!: boolean
 
-  isRegionShown: boolean = false
+  isRegionShown: boolean = true
+  regions: { title: string, url: string }[] = this.stayService.getRegions()
+  selectedRegion: string = 'Search destinations'
 
-  toggleRegion() {
+  toggleRegion(): void {
     this.isRegionShown = !this.isRegionShown
-    console.log('this.isRegionShown:', this.isRegionShown);
+  }
+
+  setSelectedRegion(region: string): void {
+    this.selectedRegion = region
+    this.toggleRegion()
   }
 }
