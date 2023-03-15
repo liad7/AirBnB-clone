@@ -1,8 +1,16 @@
 <section [ngClass]="{'search-stay':true, 'show':isOpen}">
-    <label class="search-where">
+    <label class="search-where" (click)="toggleRegion()">
         <p class="header">Where</p>
         <input placeholder="Search destinations" />
     </label>
+    <div *ngIf="isRegionShown" class="region-modal">
+        <h4>Search by region</h4>
+        <div class="wrapper">
+            <div>
+
+            </div>
+        </div>
+    </div>
     <label>
         <p class="header">Check in</p>
         <input placeholder="date" />

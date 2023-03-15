@@ -7,4 +7,11 @@ import { Component, Input } from '@angular/core'
 })
 export class SearchStayComponent {
   @Input() isOpen!: boolean
+  
+  isRegionShown: boolean = true
+
+  toggleRegion() {
+    this.isRegionShown = !this.isRegionShown
+    console.log('this.isRegionShown:', this.isRegionShown);
+  }
 }
